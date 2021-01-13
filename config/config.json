@@ -1,0 +1,18 @@
+{
+    "HostIPV4": "localhost",
+    "HostPort": ":9090",
+    "StaticDir": "./static/",
+    "LoginHTML": "login.html",
+    "IndexHTML": "index.html",
+    "RegistHTML": "regist.html",
+    "DatabaseDir": "./database/",
+    "UserDBJSON": "user_db.json",
+    "UserMapDBJSON": "user_db_map.json",
+    "DiskRootDir": "./DiskRoot/",
+    "LogSetReportCaller": false,
+    "LogSetFormatter": 0,
+    "LogSetOutput": 0,
+    "LogSetLevel": 0,
+    "TransportHTML": "transport.html",
+    "ShareHTML": "share.html"
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./static/css/login.css">
+        <script src="./static/js/jquery.min.js"></script>
+        <script src="./static/js/global.js"></script>
+        <script src="./static/js/md5.js"></script>
+        <title>Sault</title>
+    </head>
+    <body onkeydown="keyLogin();">
+        <div class="form">
+            <!-- 登录tittle -->
+            <h2>
+                <span>登录</span>
+            </h2>
+            <!-- 中间填写区域 -->
+            <div class="form-area">
+                <!-- 短信登录 -->
+                <div class="title">
+                    <a href="#">短信快捷登录>></a>
+                </div>
+                <!-- 账号 -->
+                <div class="form-item name">
+                    <input type="text" name="username" placeholder="请输入账号" maxlength="16">
+                </div>
+                <!-- 密码 -->
+                <div class="form-item pwd">
+                    <input type="password" name="password" placeholder="请输入密码" maxlength="16">
+                </div>
+                <!-- 登录按钮 -->
+                <div class="form-item login">
+                    <button onclick="login()">登录</button>
+                </div>
+                <!-- 忘记密码 -->
+                <div class="forget">
+                    <a href="#">忘记密码？</a>
+                </div>
+                <!-- 其他登录方式和注册 -->
+                <div class="regist">
+                    <span>其他方式登录：</span>
+                    <a href="">立即注册</a>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        document.getElementsByClassName("regist")[0].getElementsByTagName("a")[0].href = regist_href;
+        function keyLogin(){
+            if (event.keyCode == 13){  //回车键的键值为13
+                var btn = document.getElementsByTagName("button")[0];
+                btn.click();  //xxxx为登录按钮的id
+            }
+        }
+        function login() {
+            let username = document.getElementsByName("username")[0].value,
+                password = document.getElementsByName("password")[0].value;
+            let login_data = "{\"username\""+ ":\"" + username + "\"," + "\"password\"" + ":\"" + b64_md5(password) + "\"}";
+            console.log(username + " " + password);
+            $.ajax(
+                {
+                    url: login_rpc,
+                    data: login_data,
+                    type: "POST",
+                    async: false,
+                    success: function(data)
+                    {
+                        if(data.code == 1000){
+                            console.log(data.description);
+                            window.location.href = index_href;
+                            window.localStorage.setItem('user',username);
+                            return true;
+                        }
+                        else{
+                            alert(data.description);
+                            return false;
+                        }
+                    },
+                    error: function()
+                    {
+                        alert("服务器错误")
+                    }
+                });
+        }
+    </script>
+</html>

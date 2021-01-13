@@ -1,0 +1,57 @@
+[36mINFO[0m[2020-10-27T23:33:39+08:00] logrus module init ok                        
+[36mINFO[0m[2020-10-27T23:33:39+08:00] session main init                            
+[36mINFO[0m[2020-10-27T23:33:39+08:00] fd                                           
+[36mINFO[0m[2020-10-27T23:33:39+08:00] login init                                   
+[36mINFO[0m[2020-10-27T23:33:39+08:00] [func] Get_user_db                           
+[36mINFO[0m[2020-10-27T23:33:39+08:00] [func] get_users_data_from_json              
+[36mINFO[0m[2020-10-27T23:33:39+08:00] buff:{"Users":[{"UserName":"river","PassWord":"123123"},{"UserName":"hejiang","PassWord":"321321"},{"UserName":"duapple","PassWord":"123123"},{"UserName":"duapple1","PassWord":"123123"}]}# 
+[36mINFO[0m[2020-10-27T23:33:39+08:00] [func] Get_user_map_db                       
+[36mINFO[0m[2020-10-27T23:33:39+08:00] [func] get_users_map_from_json               
+[36mINFO[0m[2020-10-27T23:33:39+08:00] buff:{"duapple":2,"duapple1":3,"hejiang":1,"river":0}# 
+[36mINFO[0m[2020-10-27T23:33:39+08:00] route setting ok                             
+[36mINFO[0m[2020-10-28T21:00:56+08:00] logrus module init ok                        
+[36mINFO[0m[2020-10-28T21:00:56+08:00] session main init                            
+[36mINFO[0m[2020-10-28T21:00:56+08:00] fd                                           
+[36mINFO[0m[2020-10-28T21:00:56+08:00] login init                                   
+[36mINFO[0m[2020-10-28T21:00:56+08:00] [func] Get_user_db                           
+[36mINFO[0m[2020-10-28T21:00:56+08:00] [func] get_users_data_from_json              
+[36mINFO[0m[2020-10-28T21:00:56+08:00] buff:{"Users":[{"UserName":"river","PassWord":"123123"},{"UserName":"hejiang","PassWord":"321321"},{"UserName":"duapple","PassWord":"123123"},{"UserName":"duapple1","PassWord":"123123"}]}# 
+[36mINFO[0m[2020-10-28T21:00:56+08:00] [func] Get_user_map_db                       
+[36mINFO[0m[2020-10-28T21:00:56+08:00] [func] get_users_map_from_json               
+[36mINFO[0m[2020-10-28T21:00:56+08:00] buff:{"duapple":2,"duapple1":3,"hejiang":1,"river":0}# 
+[36mINFO[0m[2020-10-28T21:00:56+08:00] route setting ok                             
+[36mINFO[0m[2020-10-28T21:01:09+08:00] HTTP REQUEST                                  [36mFUNC[0m=Login [36mHTTP[0m=GET
+[36mINFO[0m[2020-10-28T21:01:15+08:00] HTTP REQUEST                                  [36mFUNC[0m=Login_auth [36mHTTP[0m=POST
+[36mINFO[0m[2020-10-28T21:01:15+08:00] []uint8 {"username":"river","password":"123123"} 
+[36mINFO[0m[2020-10-28T21:01:15+08:00] username: river                              
+[36mINFO[0m[2020-10-28T21:01:15+08:00] password: 123123                             
+[36mINFO[0m[2020-10-28T21:01:15+08:00] UserInfo_t.UserName: river                   
+[36mINFO[0m[2020-10-28T21:01:15+08:00] index: 0                                     
+[36mINFO[0m[2020-10-28T21:01:15+08:00] cookie value: EdgM_eix0c_hbtjVkIqmPHoG7GnuAuxhew0_WB_TATg%3D 
+[36mINFO[0m[2020-10-28T21:01:15+08:00] set session                                  
+[36mINFO[0m[2020-10-28T21:01:15+08:00] HTTP REQUEST                                  [36mFUNC[0m=Index [36mHTTP[0m=GET
+[36mINFO[0m[2020-10-28T21:01:15+08:00] sid: EdgM_eix0c_hbtjVkIqmPHoG7GnuAuxhew0_WB_TATg= 
+[36mINFO[0m[2020-10-28T21:01:16+08:00] HTTP REQUEST                                  [36mFUNC[0m=Dir_Opt [36mHTTP[0m=POST
+[36mINFO[0m[2020-10-28T21:01:16+08:00] sid: EdgM_eix0c_hbtjVkIqmPHoG7GnuAuxhew0_WB_TATg= 
+[36mINFO[0m[2020-10-28T21:01:16+08:00]                                               [36mcurrentDir[0m=./DiskRoot/river/
+[36mINFO[0m[2020-10-28T21:01:16+08:00]                                               [36mupDir[0m=./DiskRoot/river/
+[36mINFO[0m[2020-10-28T21:01:16+08:00]                                               [36mFileAndDir[0m=20
+[36mINFO[0m[2020-10-28T21:01:16+08:00] {"Dirs":[{"DirName":"test","Size":"-","ModTime":"2020-10-16 23:00:06"},{"DirName":"test1","Size":"-","ModTime":"2020-10-16 16:22:01"},{"DirName":"test2","Size":"-","ModTime":"2020-10-16 16:22:07"},{"DirName":"test4","Size":"-","ModTime":"2020-10-16 23:00:06"},{"DirName":"test4 - 副本","Size":"-","ModTime":"2020-10-16 23:00:06"},{"DirName":"test4 - 副本 (2)","Size":"-","ModTime":"2020-10-16 23:00:06"},{"DirName":"test4 - 副本 (3)","Size":"-","ModTime":"2020-10-16 23:00:06"},{"DirName":"test4 - 副本 (4)","Size":"-","ModTime":"2020-10-16 23:00:06"},{"DirName":"test4 - 副本 (5)","Size":"-","ModTime":"2020-10-16 23:00:06"},{"DirName":"test5","Size":"-","ModTime":"2020-10-16 23:02:44"},{"DirName":"test5 - 副本","Size":"-","ModTime":"2020-10-16 23:03:06"}],"Files":[{"FileName":"1 (1).txt","Size":"0KB","ModTime":"2020-09-12 22:14:07"},{"FileName":"1 (2).txt","Size":"0KB","ModTime":"2020-09-12 22:14:07"},{"FileName":"1 (3).txt","Size":"0KB","ModTime":"2020-09-12 22:14:07"},{"FileName":"1 (4).txt","Size":"0KB","ModTime":"2020-09-12 22:14:07"},{"FileName":"1 (5).txt","Size":"0KB","ModTime":"2020-09-12 22:14:07"},{"FileName":"ONVIF-AccessControl-Service-Spec.pdf","Size":"487KB","ModTime":"2020-09-12 22:14:34"},{"FileName":"[BT下载][调音师][WEB-MKV\u002685.9MB][法语中字][720P][HQC].mkv","Size":"85M","ModTime":"2020-10-22 16:10:42"},{"FileName":"readme.txt","Size":"0KB","ModTime":"2020-10-09 17:40:01"},{"FileName":"招募.jpg","Size":"389KB","ModTime":"2020-10-16 22:59:55"}]} 
+[36mINFO[0m[2020-10-28T21:01:21+08:00] HTTP REQUEST                                  [36mFUNC[0m=Logout [36mHTTP[0m=GET
+[36mINFO[0m[2020-10-28T21:01:21+08:00] session destroy                              
+[36mINFO[0m[2020-10-28T21:01:22+08:00] HTTP REQUEST                                  [36mFUNC[0m=Regist [36mHTTP[0m=GET
+[36mINFO[0m[2020-10-28T21:01:35+08:00] HTTP REQUEST                                  [36mFUNC[0m=AddUser [36mHTTP[0m=POST
+[36mINFO[0m[2020-10-28T21:01:35+08:00] add username: river1                         
+[36mINFO[0m[2020-10-28T21:01:35+08:00] add password: 123123                         
+[36mINFO[0m[2020-10-28T21:01:35+08:00]                                               [36mPassWord MD5[0m=123123
+[36mINFO[0m[2020-10-28T21:01:35+08:00] [func] add_user_data_to_json                 
+[36mINFO[0m[2020-10-28T21:01:35+08:00] [func] get_users_data_from_json              
+[36mINFO[0m[2020-10-28T21:01:35+08:00] buff:{"Users":[{"UserName":"river","PassWord":"123123"},{"UserName":"hejiang","PassWord":"321321"},{"UserName":"duapple","PassWord":"123123"},{"UserName":"duapple1","PassWord":"123123"}]}# 
+[36mINFO[0m[2020-10-28T21:01:35+08:00] [func] get_users_map_from_json               
+[31mERRO[0m[2020-10-28T21:01:35+08:00] open users data json file failed             
+[36mINFO[0m[2020-10-28T21:01:35+08:00] {[{river 123123} {hejiang 321321} {duapple 123123} {duapple1 123123} {river1 123123}]} 
+[36mINFO[0m[2020-10-28T21:01:35+08:00] {"Users":[{"UserName":"river","PassWord":"123123"},{"UserName":"hejiang","PassWord":"321321"},{"UserName":"duapple","PassWord":"123123"},{"UserName":"duapple1","PassWord":"123123"},{"UserName":"river1","PassWord":"123123"}]} 
+[36mINFO[0m[2020-10-28T21:01:35+08:00] [func] Get_user_db                           
+[36mINFO[0m[2020-10-28T21:01:35+08:00] [func] get_users_data_from_json              
+[36mINFO[0m[2020-10-28T21:01:35+08:00] buff:{"Users":[{"UserName":"river","PassWord":"123123"},{"UserName":"hejiang","PassWord":"321321"},{"UserName":"duapple","PassWord":"123123"},{"UserName":"duapple1","PassWord":"123123"},{"UserName":"river1","PassWord":"123123"}]}# 
+[36mINFO[0m[2020-10-28T21:01:35+08:00] HTTP REQUEST                                  [36mFUNC[0m=Login [36mHTTP[0m=GET

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .iconfont-refresh{
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background-image: url(./imgs/title_refresh.png);
+        background-size: 90% 90%;
+        background-position: 1px 4px;
+        background-repeat: no-repeat;
+    }
+</style>
+<script>
+    function refresh() {
+        let icon_refresh = document.getElementsByClassName("iconfont-refresh")[0],
+            rotateval = 0;
+        function test() {
+            rotateval = rotateval + 1;
+            if(rotateval === 360) {
+                clearInterval(interval);
+                rotateval = 0;
+            }
+            icon_refresh.style.transform = 'rotate('+rotateval+'deg)';
+        }
+        let interval = setInterval(test, 10);
+        
+    }
+</script>
+<body>
+    <li>
+        <i class="iconfont-refresh"></i>
+        <button onclick="refresh()">刷新</button>
+    </li>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./static/css/regist.css">
+        <script src="./static/js/jquery.min.js"></script>
+        <script src="./static/js/global.js"></script>
+        <script src="./static/js/md5.js"></script>
+        <title>Sault</title>
+    </head>
+    <body>
+        <div class="form">
+            <!-- 注册title -->
+            <h2>
+                <span>注册</span>
+            </h2>
+            <!-- 中间填写的区域 -->
+            <div class="form-area">
+                <!-- 登录链接 -->
+                <div class="readme ttright">
+                    <a href="" style="font-size: 13px;">已有账号，直接登录></a>
+                </div>
+                <!-- 账号 -->
+                <div class="form-item haserror"> <!-- haserror去掉恢复正常样式，便于js更改样式 -->
+                    <input type="text" placeholder="账号（1-16个字符组成，区分大小写）" name="Username" maxlength="16" onchange="change()">
+                    <div class="error">用户已存在</div>
+                </div>
+                <!-- 密码 -->
+                <div class="form-item">
+                    <input type="password" placeholder="密码（6-16个字符组成，区分大小写）" name="Password" maxlength="16">
+                </div>
+                <!-- 手机号 -->
+                <div class="form-item">
+                    <!-- 地区选择 -->
+                    <div class="select clearfix">
+                        <div class="select-item">
+                            <div class="title">
+                            中国大陆 
+                            </div>
+                            <ul style="display: none;">
+                                <li class="active">中国大陆</li>
+                                <li>中国香港</li>
+                                <li>中国澳门</li>
+                                <li>中国台湾</li>
+                            </ul>
+                        </div>
+                        <!-- 输入手机号 -->
+                        <div class="input">
+                            <input type="text" placeholder="填写常用手机号">
+                        </div>
+                    </div>
+                </div>
+                <!-- 短信验证码 -->
+                <div class="form-item">
+                    <input type="password" placeholder="请输入短信验证码">
+                    <button type="button" class="btn-sncode">点击获取</button>
+                </div>
+                <!-- 同意协议 -->
+                <div class="readme" style="margin: 3px 0;">
+                    <label onclick="agree()">
+                        <input type="checkbox" class="checkbox">
+                        <i class="check"></i>
+                    </label>
+                    <span class="agree">我已同意
+                        <a href="#">《索特网盘用户使用协议》</a>和
+                        <a href="#">《索特网盘用户隐私政策》</a>
+                    </span>
+                </div>
+                <!-- 注册按钮 -->
+                <div class="form-item" style="margin-top: 13px;">
+                    <button disabled class="fill" onclick="regist()">注册</button> <!-- disabled去掉恢复正常样式，便于js更改样式 -->
+                </div>
+            </div> 
+        </div>
+    </body>
+    <script>
+        document.getElementsByTagName("a")[0].href = login_href;
+        let checkbox = document.getElementsByClassName("checkbox")[0],
+            button = document.getElementsByClassName("fill")[0],
+            error = document.getElementsByClassName("error")[0];
+
+        function change() {
+            error.style.display = "none";
+        }
+        
+        function agree() {
+            if(checkbox.checked) {
+                checkbox.checked = false;
+                button.disabled = true;
+            }
+            else{
+                checkbox.checked = true;
+                button.disabled = false;
+            }
+        }
+
+        function regist() {
+            let username = document.getElementsByName("Username")[0].value,
+                password = document.getElementsByName("Password")[0].value;
+            let regist_data = "{\"UserName\""+ ":\"" + username + "\"," + "\"PassWord\"" + ":\"" + b64_md5(password) + "\"}";
+            console.log(regist_data);
+            $.ajax(
+                {
+                    url: regist_rpc,
+                    data: regist_data,
+                    type: "POST",
+                    async: false,
+                    success: function(data)
+                    {
+                        if(data.code == 1000){
+                            console.log(data.description);
+                            window.location.href = login_href;
+                            return true;
+                        }
+                        else{
+                            alert(data.description);
+                            return false;
+                        }
+                    },
+                    error: function()
+                    {
+                        error.style.display = "block";
+                    }
+                });
+        }
+    </script>
+</html>
+
